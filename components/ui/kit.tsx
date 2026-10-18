@@ -193,10 +193,3 @@ export function Chip({
   )
 }
 
-export function DemoNote({ children, className }: { children: ReactNode; className?: string }) {
-  return (
-    <p className={cn('rounded-2xl bg-warning px-4 py-3 text-sm leading-relaxed text-warning-foreground', className)}>
-      {children}
-    </p>
-  )
-}

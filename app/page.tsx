@@ -1,9 +1,12 @@
+'use client'
+
 import { BookOpen, Compass, Hammer, IdCard, Search, ShieldCheck, WifiOff, Languages, School } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { LandingCta } from '@/components/landing/landing-cta'
 import { Logo } from '@/components/shell/logo'
 import { Card } from '@/components/ui/kit'
+import { useCopy } from '@/lib/i18n'
 
 const STEPS = [
   { icon: Compass, title: 'Discover', text: 'A short, friendly activity to notice what you enjoy. Not an exam.' },
@@ -21,6 +24,7 @@ const PROMISES = [
 ]
 
 export default function LandingPage() {
+  const copy = useCopy()
   return (
     <div id="main" className="min-h-dvh">
       <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 md:px-8">
@@ -39,19 +43,18 @@ export default function LandingPage() {
         <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 pt-6 pb-16 md:grid-cols-2 md:px-8 md:pt-12">
           <div>
             <p className="mb-4 inline-flex rounded-full bg-accent px-3 py-1 text-sm font-semibold text-accent-foreground">
-              For students from Class 9 onwards
+              {copy.students}
             </p>
             <h1 className="text-4xl leading-[1.08] font-semibold md:text-6xl">
-              Small steps can open new <span className="text-teal italic">paths.</span>
+              {copy.hero}
             </h1>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-muted-foreground text-pretty">
-              SeekhSetu is your learning bridge. Start with what interests you, try small practical challenges, and build
-              a record of what you&apos;ve practised — without having to choose a career today.
+              {copy.heroText}
             </p>
             <div className="mt-8">
               <LandingCta />
             </div>
-            <p className="mt-4 text-sm text-muted-foreground">Free learning companion · Your progress stays on this device</p>
+            <p className="mt-4 text-sm text-muted-foreground">{copy.free}</p>
           </div>
           <div className="relative">
             <div className="overflow-hidden rounded-[2.5rem] bg-secondary">
@@ -74,7 +77,7 @@ export default function LandingPage() {
         <section className="bg-card py-16" aria-labelledby="bridge-heading">
           <div className="mx-auto max-w-6xl px-4 md:px-8">
             <h2 id="bridge-heading" className="text-3xl font-semibold md:text-4xl">
-              Five steps across the bridge
+              {copy.fiveSteps}
             </h2>
             <p className="mt-3 max-w-xl text-muted-foreground">Move at your own pace. Every step is small, and you can come back any time.</p>
             <ol className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
@@ -94,7 +97,7 @@ export default function LandingPage() {
 
         <section className="mx-auto max-w-6xl px-4 py-16 md:px-8" aria-labelledby="promise-heading">
           <h2 id="promise-heading" className="text-3xl font-semibold md:text-4xl">
-            Built to be safe and honest
+            {copy.safe}
           </h2>
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {PROMISES.map((p) => (

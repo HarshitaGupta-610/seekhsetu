@@ -112,7 +112,7 @@ export interface ProjectRecord {
 }
 
 export type OppCategory = 'scholarship' | 'competition' | 'workshop' | 'programme' | 'mentorship' | 'volunteering'
-export type VerificationStatus = 'demo' | 'needs-review' | 'facilitator-reviewed'
+export type VerificationStatus = 'needs-review' | 'facilitator-reviewed'
 export type Region = 'online' | 'north' | 'south' | 'east' | 'west' | 'central' | 'northeast' | 'any'
 export type OppMode = 'online' | 'in-person' | 'hybrid'
 
@@ -196,7 +196,6 @@ export interface AppState {
   portfolio: PortfolioEntry[]
   questions: Question[]
   opportunities: Opportunity[]
-  demoFeedback: Record<string, string>
   chat: ChatMessage[]
   chatLang: 'en' | 'hi' | 'bn'
 }

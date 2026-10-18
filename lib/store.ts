@@ -25,7 +25,6 @@ export function createInitialState(): AppState {
     portfolio: [],
     questions: createSeedQuestions(),
     opportunities: createSeedOpportunities(),
-    demoFeedback: {},
     chat: [],
     chatLang: 'en',
   }

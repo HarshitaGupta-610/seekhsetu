@@ -52,7 +52,7 @@ const FALLBACK = {
   hi: 'अच्छा सवाल! मैं रुचियों, कौशल, चुनौतियों, प्रोजेक्ट और पढ़ाई के रास्तों में मदद कर सकता हूँ। जैसे पूछें: “स्ट्रीम कैसे चुनूँ?” ज़रूरी फ़ैसलों के लिए किसी शिक्षक या बड़े से बात करें।',
 }
 
-export function getDemoReply(input: string, lang: 'en' | 'hi') {
+export function getGuideReply(input: string, lang: 'en' | 'hi') {
   const text = input.toLowerCase()
   const rule = RULES.find((r) => r.keywords.some((k) => text.includes(k)))
   return rule ? rule[lang] : FALLBACK[lang]
