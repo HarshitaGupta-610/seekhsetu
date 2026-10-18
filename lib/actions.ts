@@ -192,7 +192,7 @@ export function setProjectStatus(id: string, status: ProjectRecord['status']) {
       ...s,
       projects: {
         ...s.projects,
-        [id]: { stepsDone: [], notes: '', outcome: '', ...prev, status, updatedAt: nowIso() },
+        [id]: { ...{ stepsDone: [], notes: '', outcome: '' }, ...prev, status, updatedAt: nowIso() },
       },
     }
   })
@@ -227,7 +227,7 @@ export function updateProjectNotes(id: string, notes: string, outcome: string) {
   })
 }
 
-export function setFeedback(kind: 'challenge' | 'project' | 'demo', id: string, feedback: string) {
+export function setFeedback(kind: 'challenge' | 'project', id: string, feedback: string) {
   return updateState((s) => {
     if (kind === 'challenge' && s.challenges[id]) {
       return { ...s, challenges: { ...s.challenges, [id]: { ...s.challenges[id], feedback } } }
@@ -235,7 +235,7 @@ export function setFeedback(kind: 'challenge' | 'project' | 'demo', id: string, 
     if (kind === 'project' && s.projects[id]) {
       return { ...s, projects: { ...s.projects, [id]: { ...s.projects[id], feedback } } }
     }
-    return { ...s, demoFeedback: { ...s.demoFeedback, [id]: feedback } }
+    return s
   })
 }
 
