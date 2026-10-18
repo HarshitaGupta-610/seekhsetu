@@ -29,7 +29,7 @@ export function ChallengeDetail({ id }: { id: string }) {
             <EmptyState
               icon={<Award aria-hidden />}
               title="Challenge not found"
-              description="It may have been removed, or demo data was reset on this device."
+              description="It may have been removed, or your local progress was reset on this device."
               action={<LinkButton href="/challenges">See all challenges</LinkButton>}
             />
           )
