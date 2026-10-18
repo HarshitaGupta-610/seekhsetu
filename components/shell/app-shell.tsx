@@ -23,6 +23,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState, type ReactNode } from 'react'
 import { cn } from '@/lib/utils'
+import { useCopy } from '@/lib/i18n'
 import { LanguageSwitcher } from './language-switcher'
 import { Logo } from './logo'
 
@@ -79,6 +80,7 @@ function isActive(pathname: string, href: string) {
 
 export function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname()
+  const copy = useCopy()
   const [menuOpen, setMenuOpen] = useState(false)
   const bare = BARE_ROUTES.includes(pathname)
 
@@ -104,11 +106,19 @@ export function AppShell({ children }: { children: ReactNode }) {
     )
   }
 
+  const labels: Record<string, string> = {
+    Home: copy.home, Roadmap: copy.roadmap, Challenge: copy.challenge, Passport: copy.passport,
+    'Your journey': copy.journey, 'Practise & show': copy.practise, Explore: copy.explore, Settings: copy.settings,
+    'Discover interests': copy.discover, 'My roadmap': copy.myRoadmap, Lessons: copy.lessons, 'Skill planner': copy.planner,
+    'Weekly challenge': copy.weeklyChallenge, 'Community projects': copy.projects, 'Skill Passport': copy.skillPassport,
+    'Opportunity board': copy.opportunities, 'Skills in action': copy.skillsInAction, 'Ask a Local Guide': copy.guides,
+    'Ask SeekhSetu': copy.ask, 'Saved for later': copy.saved, 'Profile & settings': copy.profile, 'Facilitator view': copy.facilitator,
+  }
   const nav = (
     <nav aria-label="Main" className="flex flex-col gap-6">
       {GROUPS.map((g) => (
         <div key={g.title}>
-          <p className="mb-2 px-3 text-xs font-semibold tracking-wider text-muted-foreground uppercase">{g.title}</p>
+          <p className="mb-2 px-3 text-xs font-semibold tracking-wider text-muted-foreground uppercase">{labels[g.title] ?? g.title}</p>
           <ul className="flex flex-col gap-0.5">
             {g.items.map((item) => {
               const active = isActive(pathname, item.href)
@@ -123,7 +133,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                     )}
                   >
                     <item.icon className="size-4.5 shrink-0" aria-hidden />
-                    {item.label}
+                    {labels[item.label] ?? item.label}
                   </Link>
                 </li>
               )
@@ -156,7 +166,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             type="button"
             onClick={() => setMenuOpen(true)}
             className="rounded-full p-2 hover:bg-muted focus-visible:ring-4 focus-visible:ring-ring/30 outline-none"
-            aria-label="Open menu"
+            aria-label={copy.openMenu}
             aria-expanded={menuOpen}
           >
             <Menu className="size-5" aria-hidden />
@@ -179,7 +189,7 @@ export function AppShell({ children }: { children: ReactNode }) {
                 type="button"
                 onClick={() => setMenuOpen(false)}
                 className="rounded-full p-2 hover:bg-muted"
-                aria-label="Close menu"
+aria-label={copy.closeMenu}
               >
                 <X className="size-5" aria-hidden />
               </button>
@@ -212,7 +222,7 @@ export function AppShell({ children }: { children: ReactNode }) {
               <span className={cn('rounded-full px-3 py-1', active && 'bg-accent')}>
                 <item.icon className="size-5" aria-hidden />
               </span>
-              {item.label}
+              {labels[item.label] ?? item.label}
             </Link>
           )
         })}
@@ -224,7 +234,7 @@ export function AppShell({ children }: { children: ReactNode }) {
           <span className="rounded-full px-3 py-1">
             <Menu className="size-5" aria-hidden />
           </span>
-          More
+          {copy.more}
         </button>
       </nav>
     </div>
