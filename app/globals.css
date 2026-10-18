@@ -36,8 +36,7 @@
   --radius-4xl: calc(var(--radius) * 2.6);
 }
 
-/* Brand palette: cream #FFF9F0, navy #12345A, teal #0D9488, pale blue #DCEFF5, soft teal #BFE8E1.
-   Buttons use a slightly deeper teal (#0F766E) so white text meets WCAG AA contrast. */
+/* SeekhSetu brand palette: warm paper, ink navy, bridge teal and a clear target-orange accent. */
 :root {
   color-scheme: light;
   --background: #fff9f0;

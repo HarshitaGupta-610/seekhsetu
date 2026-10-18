@@ -14,7 +14,6 @@ import {
   MessagesSquare,
   School,
   Search,
-  Sparkles,
   Target,
   Trophy,
   UserRound,
@@ -24,6 +23,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState, type ReactNode } from 'react'
 import { cn } from '@/lib/utils'
+import { LanguageSwitcher } from './language-switcher'
 import { Logo } from './logo'
 
 const PRIMARY = [
@@ -65,7 +65,7 @@ const GROUPS: { title: string; items: { href: string; label: string; icon: typeo
   {
     title: 'Settings',
     items: [
-      { href: '/profile', label: 'Profile & demo data', icon: UserRound },
+      { href: '/profile', label: 'Profile & settings', icon: UserRound },
       { href: '/facilitator', label: 'Facilitator view', icon: School },
     ],
   },
@@ -75,19 +75,6 @@ const BARE_ROUTES = ['/', '/onboarding']
 
 function isActive(pathname: string, href: string) {
   return pathname === href || (href !== '/' && pathname.startsWith(`${href}/`))
-}
-
-function DemoBadge() {
-  return (
-    <Link
-      href="/profile#demo-data"
-      className="inline-flex items-center gap-1.5 rounded-full bg-warning px-2.5 py-1 text-xs font-semibold text-warning-foreground hover:underline"
-      title="This MVP uses sample content and saves data only in this browser"
-    >
-      <Sparkles className="size-3.5" aria-hidden />
-      Demo mode
-    </Link>
-  )
 }
 
 export function AppShell({ children }: { children: ReactNode }) {
@@ -157,16 +144,14 @@ export function AppShell({ children }: { children: ReactNode }) {
         <div className="flex items-center justify-between px-2">
           <Logo />
         </div>
-        <div className="px-2">
-          <DemoBadge />
-        </div>
+        <div className="px-2"><LanguageSwitcher /></div>
         {nav}
       </aside>
 
       <header className="no-print sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-border bg-background/95 px-4 py-3 backdrop-blur lg:hidden">
         <Logo />
         <div className="flex items-center gap-2">
-          <DemoBadge />
+          <LanguageSwitcher />
           <button
             type="button"
             onClick={() => setMenuOpen(true)}

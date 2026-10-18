@@ -10,7 +10,7 @@ export type ClassLevel =
 export type InternetAccess = 'reliable' | 'sometimes' | 'limited'
 export type HelpGoal = 'explore-careers' | 'build-skill' | 'try-project' | 'discover-opportunities'
 export type PathwayId = 'digital' | 'design' | 'agriculture' | 'community' | 'entrepreneurship' | 'technical'
-export type Language = 'en' | 'hi' | 'other'
+export type Language = 'en' | 'hi' | 'bn' | 'other'
 
 export interface Profile {
   name: string
@@ -176,7 +176,7 @@ export interface ChatMessage {
   id: string
   role: 'user' | 'guide'
   text: string
-  lang: 'en' | 'hi'
+  lang: 'en' | 'hi' | 'bn'
 }
 
 export interface AppState {
@@ -198,5 +198,5 @@ export interface AppState {
   opportunities: Opportunity[]
   demoFeedback: Record<string, string>
   chat: ChatMessage[]
-  chatLang: 'en' | 'hi'
+  chatLang: 'en' | 'hi' | 'bn'
 }

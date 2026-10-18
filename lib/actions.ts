@@ -96,6 +96,10 @@ export function saveProfile(profile: Profile) {
   }))
 }
 
+export function setProfileLanguage(language: Profile['language']) {
+  return updateState((s) => (s.profile ? { ...s, profile: { ...s.profile, language } } : s))
+}
+
 export function saveDiscovery(result: DiscoveryResult) {
   return updateState((s) => ({ ...s, discovery: result, activePathway: result.top[0] }))
 }
@@ -371,7 +375,7 @@ export function clearChat() {
   return updateState((s) => ({ ...s, chat: [] }))
 }
 
-export function setChatLang(lang: 'en' | 'hi') {
+export function setChatLang(lang: 'en' | 'hi' | 'bn') {
   return updateState((s) => ({ ...s, chatLang: lang }))
 }
 

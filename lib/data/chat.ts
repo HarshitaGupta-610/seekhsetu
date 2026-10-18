@@ -27,7 +27,7 @@ const RULES: Rule[] = [
   },
   {
     keywords: ['scholarship', 'opportunit', 'competition', 'workshop', 'छात्रवृत्ति', 'अवसर', 'प्रतियोगिता'],
-    en: 'The Opportunity Board lists sample opportunities you can filter by class and location. In this demo, listings are examples — always check real scholarships on official government or institution websites with a trusted adult.',
+    en: 'The Opportunity Board lists opportunities you can filter by class and location. Listings should be verified — always check real scholarships on official government or institution websites with a trusted adult.',
     hi: 'Opportunity Board पर नमूना अवसर हैं जिन्हें आप कक्षा और जगह से फ़िल्टर कर सकते हैं। असली छात्रवृत्तियाँ हमेशा सरकारी या आधिकारिक वेबसाइट पर किसी बड़े के साथ जाँचें।',
   },
   {

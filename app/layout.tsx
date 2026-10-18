@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   },
   description:
     'SeekhSetu helps students from Class 9 onwards discover interests, explore education and career options, practise skills, complete small projects and find learning opportunities.',
-  generator: 'v0.app',
+  icons: { icon: '/icon.svg', apple: '/apple-icon.png' },
+  generator: 'SeekhSetu',
 }
 
 export const viewport: Viewport = {

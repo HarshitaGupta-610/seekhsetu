@@ -51,7 +51,7 @@ export default function LandingPage() {
             <div className="mt-8">
               <LandingCta />
             </div>
-            <p className="mt-4 text-sm text-muted-foreground">Free MVP · Demo content · Saved only in your browser</p>
+            <p className="mt-4 text-sm text-muted-foreground">Free learning companion · Your progress stays on this device</p>
           </div>
           <div className="relative">
             <div className="overflow-hidden rounded-[2.5rem] bg-secondary">
@@ -107,14 +107,13 @@ export default function LandingPage() {
           </div>
           <p className="mt-8 max-w-3xl rounded-3xl bg-secondary p-5 text-sm leading-relaxed">
             SeekhSetu is a learning and exploration tool. It does not offer jobs, payments or placements, and does not
-            promise scholarships, income or career outcomes. Opportunity listings in this MVP are clearly labelled demo
-            examples.
+            promise scholarships, income or career outcomes. Opportunity listings should always be checked on the official organisation website before you apply.
           </p>
         </section>
       </main>
 
       <footer className="border-t border-border px-4 py-8 text-center text-sm text-muted-foreground">
-        SeekhSetu MVP · Demo mode · Show what you&apos;ve practised.
+        SeekhSetu · Learn, practise, and show what you&apos;ve practised.
       </footer>
     </div>
   )
