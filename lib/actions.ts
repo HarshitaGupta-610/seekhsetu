@@ -97,7 +97,11 @@ export function saveProfile(profile: Profile) {
 }
 
 export function setProfileLanguage(language: Profile['language']) {
-  return updateState((s) => (s.profile ? { ...s, profile: { ...s.profile, language } } : s))
+  return updateState((s) => ({
+    ...s,
+    profile: s.profile ? { ...s.profile, language } : s.profile,
+    chatLang: language === 'hi' || language === 'bn' ? language : 'en',
+  }))
 }
 
 export function saveDiscovery(result: DiscoveryResult) {

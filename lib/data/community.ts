@@ -18,8 +18,8 @@ export function createSeedQuestions(): Question[] {
       answers: [
         {
           id: 'a-1',
-          guide: 'Ms. Asha (demo guide)',
-          role: 'Science teacher — demo profile',
+          guide: 'Ms. Asha',
+          role: 'Science teacher',
           text: 'Many schools let you take a Science stream and keep Art as an elective or hobby. Ask your school which subject combinations they offer. Keep drawing — scientific illustration and design both use these skills together.',
         },
       ],
@@ -36,8 +36,8 @@ export function createSeedQuestions(): Question[] {
       answers: [
         {
           id: 'a-2',
-          guide: 'Mr. Rakesh (demo guide)',
-          role: 'Workshop instructor — demo profile',
+          guide: 'Mr. Rakesh',
+          role: 'Workshop instructor',
           text: 'ITI electrician courses cover wiring, safety, measuring instruments and fault-finding, with lots of practical work. It is for everyone — many girls train and work in technical trades. Check the eligibility on official ITI admission websites for your state.',
         },
       ],
@@ -54,8 +54,8 @@ export function createSeedQuestions(): Question[] {
       answers: [
         {
           id: 'a-3',
-          guide: 'Priya (demo guide)',
-          role: 'College student mentor — demo profile',
+          guide: 'Priya',
+          role: 'College student mentor',
           text: 'You can practise a lot on paper: write step-by-step instructions, draw flowcharts, and solve logic puzzles. When you have the phone, use short lessons that work with little data. Save notes in a notebook so you can continue offline.',
         },
       ],
@@ -72,8 +72,8 @@ export function createSeedQuestions(): Question[] {
       answers: [
         {
           id: 'a-4',
-          guide: 'Ms. Asha (demo guide)',
-          role: 'Science teacher — demo profile',
+          guide: 'Ms. Asha',
+          role: 'Science teacher',
           text: 'Yes — that is a great real-world project. Observe safely (never enter floodwater), photograph drains from a safe spot, ask neighbours when it started, and research how drainage works. Present ideas to your teacher. Stay safe and involve an adult.',
         },
       ],

@@ -196,7 +196,6 @@ export interface AppState {
   portfolio: PortfolioEntry[]
   questions: Question[]
   opportunities: Opportunity[]
-  demoFeedback: Record<string, string>
   chat: ChatMessage[]
   chatLang: 'en' | 'hi' | 'bn'
 }
